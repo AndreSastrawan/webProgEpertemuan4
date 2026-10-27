@@ -9,7 +9,7 @@
 
     <style>
         .sembunyi{
-            display: ;
+            display: none; 
         }
         .kotak-info{
             background-color: #fff;
@@ -19,6 +19,20 @@
             border-radius: 6px;
             
         }
+        .btn-close{
+            position: relative;
+            top: 8px;
+            right: 10px;
+            border: none;
+            background: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #463b3b;
+        }
+        .btn-close:hover{
+            color: #f10000;
+        } 
     </style>
 </head>
 <body>
@@ -28,16 +42,31 @@
 <div class="kartu-profile">
     <h2>Andre</h2>
     <p>web instiki</p>
-    <button onclick="info()" class="btn-detaiL">info lengkap</button>
+    <button id="btndetail" onclick="info()" class="btn-detaiL">info lengkap</button>
 </div>
 </div>  
 
-<div class="kotak-info sembunyi">
+<div class="kotak-info sembunyi" id="infobox">
+    <button onclick="tutupdetail()" class="btn-close">&times;</button>
     <h1> informasi detail</h1>
 </div>
+
     <script>
-        function inpo(){
-            alert("tombol lengkap di ke click");
+        function info (){
+           // alert("tombol lengkap di ke click");
+           let info=document.getElementById("infobox");
+           let btndetail=document.getElementById("btndetail");
+
+           info.style.display = "block";
+           btndetail.style.display = "none"
+        }et
+function tutupdetail (){    
+           // alert("tombol lengkap di ke click");
+           let info=document.getElementById("infobox");
+           let btndetail=document.getElementById("btndetail");
+
+           info.style.display = "none";
+           btndetail.style.display = "inline-block"
         }
     </script>
 </body>
